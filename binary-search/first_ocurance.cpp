@@ -1,30 +1,35 @@
 #include <iostream>
-#include <iomanip>
 using namespace std;
 
 int findNum(int *arr, int num,int size){
 
     // declare index of binary search array 
-    int start=0, end=size-1;
+    int start=0; int end=size-1;
+    int res=-1;
     while (start <= end) //base  checking 
     {
         int c ; 
 
         c = start +  (end - start)/2; //find middle  
-        if(num == arr[c])
-        {     
-             return c;
-        }
+        if(num == arr[c] )   // added extra condition for first occurance
+        {    res = c;
+        
+             end =c-1;  // for first occurance
+             //start = c+1; // for last occurance
+           
+        } 
         else if(arr[c]>=num){
-            end = c - 1 ;
+            //start = c + 1 ; //decending order array 
+            end = c -1 ;  // asending  order array
         }
          else 
         {
-            start = c + 1;
+            start = c + 1 ; //asending order array 
+            //end = c - 1;   // decending order array 
         }
     }
 
-    return -1;
+    return res;
 }
 
 
