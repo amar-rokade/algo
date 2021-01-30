@@ -11,14 +11,12 @@ int numRotated(int *arr,int size){
          mid = start + ((end - start) / 2);           //mid index
          pre =(mid + size - 1) % size ;             //previous index 
          next = (mid + 1) % size;  
-        cout<<"pre : "<<pre<<" mid :"<<mid<<" next :"<<next<<endl;                 //next next index 
         if(arr[start]>= arr[mid] && arr[end] >=arr[mid] ){
-            
-            return (size-min);
+            return mid;
         }
         else if (arr[start] <= arr[mid]){
             // end = pre;
-             start=mid;
+             start=next;
         }
         else if(arr[mid] <= arr[end] ){
             // start=next;
