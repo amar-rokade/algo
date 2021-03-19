@@ -54,8 +54,6 @@ int main() {
     stk.displayItems();
     stk.displayItems();
     cout<<stk.isEmpty();
-
-
     return 0;
 }
 
