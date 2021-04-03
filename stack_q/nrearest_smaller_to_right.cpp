@@ -8,7 +8,6 @@ void printNGR(int arr[], int size){
     {
         if(s.empty()){
             m[arr[i]] = -1;
-             s.top();
             }
         else if(!s.empty() && s.top() < arr[i]){
           m[arr[i]] = s.top();
