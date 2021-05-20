@@ -11,7 +11,6 @@ struct node
 };
 
 
-//add new element
 struct node * reverse(struct node * head){
     struct node *nextNode, * currNode,*prevNode=0;
     currNode=nextNode=head;
